@@ -1,0 +1,13 @@
+@import "./Styles/normalise.scss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html,
+body,
+:global(#main) {
+    min-height: 100vh;
+    isolation: isolate;
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
+}
