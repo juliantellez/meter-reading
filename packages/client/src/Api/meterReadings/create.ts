@@ -1,7 +1,9 @@
 import env from "../../env"
-import { MeterReading } from "../../Model/types"
 
-const createMeterReading = async (meterReading: Omit<MeterReading, "id">): Promise<MeterReading> => {
+import { MeterReading } from "../../Model/types"
+import { createMock } from "./create.mock"
+
+const create = async (meterReading: Omit<MeterReading, "id">, shouldMock: boolean = false): Promise<MeterReading> => {
     const response = await fetch(env.apiURL.meterReading.create, {
         method: "POST",
         headers: {
@@ -13,6 +15,8 @@ const createMeterReading = async (meterReading: Omit<MeterReading, "id">): Promi
     return response.json()
 }
 
+const createMeterReading = env.shouldMock ? createMock : create
+
 export {
-    createMeterReading
+    createMeterReading,
 }

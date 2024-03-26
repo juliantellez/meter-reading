@@ -1,19 +1,24 @@
 import env from "../../env"
 import { MeterReading } from "../../Model/types"
 
-const readMeterReadingById = async (id: MeterReading["id"]) => {
+import { readByIdMock, readByUserIdMock } from "./read.mock"
+
+const readById = async (id: MeterReading["id"]): Promise<MeterReading[]> => {
     const url = env.apiURL.meterReading.readById
     const response = await fetch(`${url}?id=${id}`)
 
     return response.json()
 }
 
-const readMeterReadingByUser = async (userId: MeterReading["id"]) => {
+const readByUserId = async (userId: MeterReading["id"]) => {
     const url = env.apiURL.meterReading.readByUserId
     const response = await fetch(`${url}?userId=${userId}`)
 
     return response.json()
 }
+
+const readMeterReadingById = env.shouldMock ? readByIdMock : readById
+const readMeterReadingByUser = env.shouldMock ? readByUserIdMock : readByUserId
 
 export {
     readMeterReadingById,
