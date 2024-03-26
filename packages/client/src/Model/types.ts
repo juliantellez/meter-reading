@@ -17,7 +17,7 @@ interface MeterReading {
     /**
      * Reading Value
      */
-    value: number
+    value: string
 
     /**
      * Date in unix time
