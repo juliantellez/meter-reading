@@ -1,20 +1,17 @@
 import { RuleSetRule } from 'webpack'
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
 
 const sassCss: RuleSetRule = {
     test: /\.s[ac]ss$/i,
     use: [
-        'style-loader',
+        {
+            loader: MiniCssExtractPlugin.loader,
+        },
         {
             loader: 'css-loader',
-            options: {
-                modules: {
-                    localIdentName: '[name]___[local]___[hash:base64:5]',
-                    namedExport: true,
-                },
-                importLoaders: 1,
-                url: true,
-                import: true,
-            },
+        },
+        {
+            loader: 'postcss-loader',
         },
         {
             loader: 'sass-loader',

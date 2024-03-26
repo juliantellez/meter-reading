@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { EnvironmentPlugin, WebpackPluginInstance } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import Dotenv from "dotenv-webpack"
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
 
 import { WebpackEnv, WebpackPaths } from '../types'
 
@@ -38,6 +39,10 @@ const createWebpackPlugins = (
                     to: path.join(paths.root, 'dist', 'assets'),
                 },
             ],
+        }),
+
+        new MiniCssExtractPlugin({
+            filename: "css/[name][contenthash].css",
         }),
     ]
 

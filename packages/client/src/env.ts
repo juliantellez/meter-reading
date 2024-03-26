@@ -1,4 +1,5 @@
 interface Env {
+    shouldMock: boolean,
     apiURL: {
         meterReading: {
             create: string,
@@ -9,6 +10,7 @@ interface Env {
 }
 
 const env: Env = {
+    shouldMock: true,
     apiURL: {
         meterReading: {
             create: `${process.env.API__METER_READING}` || "",
