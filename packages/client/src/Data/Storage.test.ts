@@ -22,14 +22,14 @@ describe("Storage", () => {
 
         storage.set(testValue);
 
-        const retrievedValues = storage.get('123');
+        const retrievedValues = storage.getById('123');
         expect(retrievedValues).toEqual([testValue]);
     })
 
     it('should return an empty array for a non-existent id', () => {
         const storage = new DataStorage<{ id: string; value: string }>('testStorage', mockLocalStorage);
 
-        const retrievedValues = storage.get('nonExistentId');
+        const retrievedValues = storage.getById('nonExistentId');
         expect(retrievedValues).toEqual([]);
     });
 })

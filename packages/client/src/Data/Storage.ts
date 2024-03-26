@@ -1,6 +1,6 @@
 import { MeterReading } from "../Model/types";
 
-class DataStorage<V extends { id: string }> {
+class DataStorage<V extends { id: string; userId: string }> {
     private key: string
     private storage: Storage
 
@@ -9,9 +9,14 @@ class DataStorage<V extends { id: string }> {
         this.storage = storage
     }
 
-    get(id: string): V[] {
+    getById(id: string): V[] {
         const data = JSON.parse(this.storage.getItem(this.key) || '[]') as V[];
         return data.filter((value) => value.id === id);
+    }
+
+    getByUserId(userId: string): V[] {
+        const data = JSON.parse(this.storage.getItem(this.key) || '[]') as V[];
+        return data.filter((value) => value.userId === userId);
     }
 
     set(value: V) {
