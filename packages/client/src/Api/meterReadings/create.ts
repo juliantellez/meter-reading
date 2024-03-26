@@ -3,7 +3,7 @@ import env from "../../env"
 import { MeterReading } from "../../Model/types"
 import { createMock } from "./create.mock"
 
-const create = async (meterReading: Omit<MeterReading, "id">, shouldMock: boolean = false): Promise<MeterReading> => {
+const create = async (meterReading: Omit<MeterReading, "id">): Promise<MeterReading> => {
     const response = await fetch(env.apiURL.meterReading.create, {
         method: "POST",
         headers: {

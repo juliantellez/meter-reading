@@ -1,8 +1,8 @@
 import { createMeterReading } from "./create";
-import { readMeterReadingById, readMeterReadingByUser } from "./read";
+import { readMeterReadingById, readMeterReadingByUserId } from "./read";
 
 export const meterReadingApi = {
     createMeterReading: createMeterReading,
     readMeterReadingById: readMeterReadingById,
-    readMeterReadingByUser: readMeterReadingByUser,
+    readMeterReadingByUser: readMeterReadingByUserId,
 }

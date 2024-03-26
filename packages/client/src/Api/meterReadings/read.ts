@@ -10,7 +10,7 @@ const readById = async (id: MeterReading["id"]): Promise<MeterReading[]> => {
     return response.json()
 }
 
-const readByUserId = async (userId: MeterReading["id"]) => {
+const readByUserId = async (userId: MeterReading["id"]): Promise<MeterReading[]> => {
     const url = env.apiURL.meterReading.readByUserId
     const response = await fetch(`${url}?userId=${userId}`)
 
@@ -18,9 +18,9 @@ const readByUserId = async (userId: MeterReading["id"]) => {
 }
 
 const readMeterReadingById = env.shouldMock ? readByIdMock : readById
-const readMeterReadingByUser = env.shouldMock ? readByUserIdMock : readByUserId
+const readMeterReadingByUserId = env.shouldMock ? readByUserIdMock : readByUserId
 
 export {
     readMeterReadingById,
-    readMeterReadingByUser,
+    readMeterReadingByUserId,
 }
