@@ -10,6 +10,9 @@ and predicts future usage based on historical data.
 
 ## Features
 
+<img width="1440" alt="Screenshot 2024-03-26 at 09 30 44" src="https://github.com/juliantellez/meter-reading/assets/4896851/52f32d90-a2c1-4dab-b33a-2be4ffa8a4a3">
+
+
 - Add New Readings: 
     Users can input their meter readings, which are then added to their history.
 - Validating Meter Readings:

@@ -16,6 +16,16 @@ const SubmitMeterReadingUi: React.FC<SubmitMeterReadingUiProps> = ({
     isLoading,
 }) => (
     <form onSubmit={onSubmit} className="flex justify-center items-center flex-col max-w-2xl py-8 m-auto">
+        <h1
+            className='text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white'>
+            Meter Readings
+        </h1>
+        <p
+            className='text-gray-900 md:text-1xl'
+        >
+            Enter a new meter reading:
+        </p>
+
         <input
             type="text"
             value={value}
