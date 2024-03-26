@@ -49,7 +49,7 @@ const MeterReadingsUi: React.FC<MeterReadingsUiProps> = ({
                 </tbody >
             </table >
         ) : !isLoading && (
-            <p>No previous readings found.</p>
+            <p className="text-center mb-4">No previous readings found.</p>
         )}
     </div >
 );

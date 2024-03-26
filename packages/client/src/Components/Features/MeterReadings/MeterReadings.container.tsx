@@ -21,7 +21,6 @@ const MeterReadingsContainer: React.FC<MeterReadingsContainerProps> = (props) =>
         queryKey: ['getMeterReadings', props.userId],
         queryFn: async () => {
             let meterReading = MeterReadingStorage.getByUserId(props.userId)
-
             if (!meterReading || meterReading.length < 1) {
                 meterReading = await meterReadingApi.readMeterReadingByUser(props.userId)
             }

@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { render, fireEvent, screen } from '@testing-library/react';
-import { SubmitMeterReadingContainer } from './SubmitMeterReading.container';
+
 import { meterReadingApi } from '../../../Api/meterReadings';
 import { MeterReadingType } from '../../../Model/types';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import SubmitMeterReadingContainer from './SubmitMeterReading.container';
 
 jest.mock('../../../Api/meterReadings', () => {
     return {

@@ -20,14 +20,14 @@ export const Default: Story = {
             {
                 id: '1',
                 meterType: MeterReadingType.ELECTRICITY,
-                value: 12345,
+                value: "12345",
                 date: Date.now(),
                 userId: 'user1'
             },
             {
                 id: '2',
                 meterType: MeterReadingType.GAS,
-                value: 54321,
+                value: "54321",
                 date: new Date("2021-04-13T11:00:00Z").valueOf(),
                 userId: 'user1'
             },

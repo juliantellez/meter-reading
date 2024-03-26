@@ -38,7 +38,7 @@ const validateReading = (setError: (message: string) => void, inputValue: string
     return true;
 };
 
-export const SubmitMeterReadingContainer: React.FC<SubmitMeterReadingContainerProps> = (props) => {
+const SubmitMeterReadingContainer: React.FC<SubmitMeterReadingContainerProps> = (props) => {
     const [lastMeterReading, setLastMeterReading] = React.useState<MeterReading | undefined>()
     const [value, setValue] = useState("");
     const [errorMessage, setErrorMessage] = useState('');
@@ -109,3 +109,5 @@ export const SubmitMeterReadingContainer: React.FC<SubmitMeterReadingContainerPr
         />
     );
 };
+
+export default SubmitMeterReadingContainer
